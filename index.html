@@ -1,0 +1,53 @@
+<script charset="UTF-8">
+console.log("Selection Sort");
+console.log("Thuật toán sắp xếp lựa chọn sắp xếp một mảng bằng cách liên tục tìm phần tử\
+  tối thiểu (xem xét thứ tự tăng dần) từ phần chưa được sắp xếp và đặt nó ở đầu.\
+  Thuật toán duy trì hai tập con trong một mảng nhất định.\
+");
+arr = [2,1,5,4,3];
+
+function selectionSort(arr) {
+  let minIndex, temp = null;
+  let length = arr.length;
+
+  for(let i=0; i < length; i++) {
+    minIndex = i
+    for(let j=i+1; j <length; j++) {
+      if (arr[j] < arr[minIndex]) {
+        minIndex = j;
+      }
+    }
+    temp = arr[i];
+    arr[i] = arr[minIndex];
+    arr[minIndex] = temp;
+  }
+}
+console.log(arr);
+selectionSort(arr);
+console.log(arr);
+</script>
+
+<script>
+console.log("Bubble Sort");
+console.log("Bubble Sort là thuật toán sắp xếp đơn giản nhất hoạt động bằng cách\
+  liên tục hoán đổi các phần tử liền kề nếu chúng sai thứ tự.");
+arr = [2,1,5,4,3];
+
+function bubbleSort(arr) {
+  let temp = null;
+  let length = arr.length;
+
+  for(let i=0; i < length; i++) {
+    for(let j=0; j < length-i-1; j++) {
+      if (arr[j] > arr[j+1]) {
+        temp = arr[j];
+        arr[j] = arr[j+1];
+        arr[j+1] = temp;
+      }
+    }
+  }
+}
+console.log(arr);
+bubbleSort(arr);
+console.log(arr);
+</script>
